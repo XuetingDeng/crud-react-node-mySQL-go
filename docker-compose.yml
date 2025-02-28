@@ -38,7 +38,7 @@ services:
     ports:
       - "5173:5173"
     environment:
-      - PORT=5173
+      - http://backend:8800
     depends_on:
       - backend
 
