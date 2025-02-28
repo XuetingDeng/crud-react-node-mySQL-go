@@ -27,7 +27,8 @@ const Update = () => {
    const handleClick = async e =>{
     e.preventDefault()
     try{
-        await axios.put("http://localhost:8800/books/"+ bookID, book)
+        // await axios.put("http://localhost:8800/books/"+ bookID, book)
+        await axios.put("http://3.88.175.3:8800/books/"+ bookID, book)
         navigate("/")
     }catch(err){
         console.log(err)
