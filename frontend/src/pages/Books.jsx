@@ -23,8 +23,8 @@ fetchAllBooks()
 
 const handleDelete = async (id)=>{
     try{
-    // await axios.delete("http://localhost:8800/books/"+id)
-    await axios.delete("http://3.88.175.3:8800/books/"+id)
+    await axios.delete("http://localhost:8800/books/"+id)
+    // await axios.delete("http://3.88.175.3:8800/books/"+id)
     window.location.reload()
     }catch(err){
         console.log(err)
