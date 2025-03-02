@@ -8,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-ARG REACT_APP_API_BASE_URL=http://localhost:8800
+
 ENV REACT_APP_API_BASE_URL=$REACT_APP_API_BASE_URL
 
 
