@@ -12,6 +12,8 @@ const Update = () => {
         cover: ""
     });
 
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8800";
+
     const navigate = useNavigate()
 
     const location = useLocation()
@@ -27,8 +29,7 @@ const Update = () => {
    const handleClick = async e =>{
     e.preventDefault()
     try{
-        await axios.put("http://localhost:8800/books/"+ bookID, book)
-        // await axios.put("http://3.88.175.3:8800/books/"+ bookID, book)
+        await axios.put(`${API_BASE_URL}/books/${bookID}`, book)
         navigate("/")
     }catch(err){
         console.log(err)
