@@ -6,8 +6,8 @@ const Books = () => {
 
 const [books, setBooks] = useState([])
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8800";
-console.log("API_BASE_URL: ", process.env.REACT_APP_API_BASE_URL);
+const API_BASE_URL = import.meta.env.VITE_API_URL  || "http://localhost:8800";
+console.log("API_BASE_URL: ", import.meta.env.VITE_API_URL );
 
 useEffect(()=>{
 const fetchAllBooks = async ()=>{
