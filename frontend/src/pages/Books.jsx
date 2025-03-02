@@ -15,6 +15,7 @@ const fetchAllBooks = async ()=>{
       const res = await axios.get(`${API_BASE_URL}/books`)
       setBooks(res.data)
       console.log(res)
+      console.log("process.env.REACT_APP_API_BASE_URL is: ", process.env.REACT_APP_API_BASE_URL);
     }catch(err){
         console.log(err)
     }
