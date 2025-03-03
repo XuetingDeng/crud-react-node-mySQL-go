@@ -48,8 +48,21 @@ app.get("/books", (req,res)=>{
     ]
 
     db.query(query, [values], (err,data)=>{
-        if(err) return res.json(err)
-        return res.json("Book has been created successfully!!!")
+        if(err) return res.status(500).json(err);
+        const newBookId = data.insertId;
+        res.setHeader('Location', `/books/${newBookId}`);
+        // return res.json("Book has been created successfully!!!")
+
+        return res.status(201).json({
+          message: "Book has been created successfully!!!",
+          book: {
+            id: newBookId,
+            title: req.body.title,
+            description: req.body.description,
+            price: req.body.price,
+            cover: req.body.cover
+          }
+        });
     })
   })
 
