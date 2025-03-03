@@ -12,7 +12,6 @@ console.log("API_BASE_URL: ", import.meta.env.VITE_API_URL );
 useEffect(()=>{
 const fetchAllBooks = async ()=>{
     try {
-      // const res = await axios.get("http://localhost:8800/books")
       const res = await axios.get(`${API_BASE_URL}/books`)
       setBooks(res.data)
       console.log(res)
@@ -26,7 +25,6 @@ fetchAllBooks()
 
 const handleDelete = async (id)=>{
     try{
-    // await axios.delete("http://localhost:8800/books/"+id)
     await axios.delete(`${API_BASE_URL}/books/${id}`)
     window.location.reload()
     }catch(err){
